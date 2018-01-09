@@ -12,6 +12,9 @@ server.on('request',(req,res)=>{
     if(req.url==='/registe'){
         registeHandle(req,res)
     }
+    if(req.url==='/login'){
+        loginHandle(req,res)
+    }
 })
 server.listen(3000)
 function registeHandle(req,res){
@@ -44,3 +47,38 @@ function registeHandle(req,res){
         })
     })
 }
+
+function loginHandle(req,res){
+    res.setHeader('Content-type','application/json');
+    var total='';
+    req.on('data',(data)=>{
+        total+=data;
+    })
+    req.on('end',()=>{
+        const obj=querystring.parse(total);
+        const username=obj.username;
+        const password=obj.password;
+        console.log(username)
+        fs.readFile('user.json',(err,data)=>{
+            if(err){
+                res.end(JSON.stringify({success:0,massage:'系统错误，请重新尝试'}))
+                return
+            }
+            const arr=JSON.parse(data);
+            console.log(arr)
+            for(let i=0;i<arr.length;i++){
+                if(username==arr[i].username){
+                    if(password==arr[i].password){
+                        res.end(JSON.stringify({success:1,message:'登录成功'}))
+                        return
+                    }
+                    res.end(JSON.stringify({success:0,message:'密码错误，请重新输入'}))
+                    return
+                }
+                res.end(JSON.stringify({success:0,message:'用户名错误，请重新输入'}))
+            }
+        })
+
+    })
+}
+
