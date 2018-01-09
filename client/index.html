@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>git使用练习</title>
     <link rel="stylesheet" href="lib\bootstrap\css\bootstrap.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <h1>hello world!</h1>
+    <h1>注册页面</h1>
+    <form>
+        <input type="text" placeholder="请输入用户名" name="username" required pattern="^[\u4e00-\u9fa5]{2,10}$"><br><br>
+        <input type="text" placeholder="请输入手机号码" name="password" required pattern="^1[35789]\d{9}$"><br><br>
+        <input type="text" placeholder="请确认手机号码" name="password1" required pattern="^1[35789]\d{9}$"><br><br>
+        <input type="submit" value="提交">
+    </form>
     <script src="lib/template-web.js"></script>
     <script src="lib/jquery.js"></script>
     <script src="lib\bootstrap\js\bootstrap.min.js"></script>
