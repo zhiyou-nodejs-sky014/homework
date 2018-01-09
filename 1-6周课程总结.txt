@@ -1,0 +1,249 @@
+1、html css ？？
+行标签、块标签、行内块标签；
+css布局方式：
+       流式布局
+       定位布局：绝对、相对、固定
+       弹性布局：flex；justify-content主轴对齐方式 align-items：交叉轴方向对齐
+                 flex-wrap
+       浮动布局：float：
+       响应布局：媒体查询：@media；
+css选择器：！important优先级最高  优先级关系
+css sprite 图片精灵 background-position ：优缺点：减少请求次数：省流量
+css 动画：
+        过渡效果：transition 
+        关键帧动画 animation：使用动画 @keyframes：定义动画       
+css 图形变换
+        transform：scale rotate translate skew
+css常用单位：
+        px，%，em，rem，vw，vh
+css盒模型：margin/border/padding/content
+           box-sizing:border-box/content-box;
+css第三方：animate.css font-awesome 字体图标库
+2、js ？？
+Number/String/Boolean/Function/Undefined/Object/Array/Date/Math/Regex/JSON
+数字：
+parseInt（）；parseFloat（）；
+num.toFixed（）；
+字符串
+length；+
+str.substr（）/substring()/slice()
+str.indexOf()/starswith()/endswith()/includes()
+str.touppercase()/tolowercase()
+str.split()
+str.trim()
+布尔
+&& || ! == === !=  !==
+数组
+ length;arr[i]
+ arr.push()/unshift()
+ arr.pop()/shift()/splice()
+ arr.concat()
+ arr.foreach()
+ arr.filter()
+ arr.sort()
+ arr.map()
+ arr.reduce()
+日期:
+new date()
+data.getfullyear()/getmonth()/getdate()/gethourse()/getminutes()/getseconds()/geteday()/getnow()
+数学
+math.randm()
+math.ceil()/floor() 向上（下）取整
+math.round()四舍五入
+math.abs()绝对值
+math.pow()次方运算
+math.max()最大值
+math.min()最小值
+math.sqrt()平方根
+三角函数 对数运算
+
+JSON
+JSON.parse（）
+JSON.stringfy();
+
+流程控制语句
+if-else for break：跳出当前循环
+do-while while：循环 类似for 
+区别 do-while，先执行，后判断，至少执行一次
+     while，先判断 后执行，可能一次也不执行
+定义类：创建对象：
+
+3、DOM操作 原生API ？？
+ 查找标签 queryselector（）/queryselectorall（）
+ 提取标签内容，innerHTML innerText value
+ 添加标签 appendChild
+ 删除标签 removeChild()
+ 创建标签createElement()
+ 属性操作setattribute()
+ css操作：ele.style.cssname()
+ class操作 classname，classlist
+ DOM是树形结构
+4、DOM事件
+ 鼠标事件;click/mouseover/mouseout/mouseenter/mouseleave/mousedown/mouseup/
+ 键盘事件 keydown/keypress/keyup
+ form事件 submit/focus/input/change/reset/blur
+ 滚动事件：scroll
+ 页面加载事件 load：HTML以及所有引入的所有的资源加载完成触发
+             DOMContentLoaded:  html页面加载完成触发
+ 窗口大小变化事件：resize；
+ 事件监听的两种方式：on，addEventListener；
+ 事件传播过程：捕获阶段，冒泡阶段
+ 事件的默认行为：阻止默认行为；
+5、jquery事件操作
+$("选择器").html（）/text()/val()
+$("选择器").attr()/prop()
+$('选择器').css(）
+$('选择器').addclass（）/removeClass()
+$('选择器').append()
+$('选择器').parent()/sibling()
+$('选择器').width()/heigth()/innerwidth()/innerheigth()
+$('选择器').offset()/position()
+$('选择器').eventname(function(){})
+$('选择器').on('eventname',function(){})
+$('选择器').on('eventname',选择器,function(){})
+$('选择器').one('eventname',function(){});
+解除事件绑定
+$('选择器').off('eventname',要解绑定的函数名);
+                            缺省第二个参数就click的所有函数全部解绑定
+jquery动画操作
+$('选择器').animate（{}，1s，function）
+$('选择器').delay()
+$('选择器').hide()
+$('选择器').show()
+$('选择器').finish()/stop()
+
+js动画第三方 velocity.js
+
+jquery ajax操作
+$.get()/post();
+$.ajax();请求的通用写法
+
+6、art-template 视图模板
+1浏览器端模板
+
+<script id='templateid' type='html/text'>
+    {{变量 |过滤器名称}}
+    {{if}}
+    {{/if}}
+     
+2)let html=template('id',jsonData);
+定义过滤器
+template.defauts.imports.过滤器名称=function（value）{return value}
+服务器端模板
+
+7、NodeJS基本操作
+http：fs：url：querystring：
+   创建服务器
+   监听request事件server.on('request',(req,res))
+   监听端口 server.listen（3000）
+   get请求数据在url中，进行url.parse就可以得到数据对象
+   post请求数据在请求体中，需要监听request的data事件和end事件才能获取完整数据，进行         querystring.parse
+fs：
+   writefile()/readfile()/creatreadstream()
+
+8、浏览器端存储
+   localstorage
+   sessionstorage
+   cookie ：jquery.cookie.js
+9、bootstrap
+   响应式前端框架 xs/sm/md/lg
+   栅格系统：1容器 .container/.container-fluid
+             2行 .row
+             3列 一行分为12列
+10、less
+   css的预处理语言
+   增加了变量 函数 mixin、extend、@import、when
+   支持条件语句when 支持循环操作 迭代
+11、git
+   git init 
+   git add 文件名
+   git commit -m ‘提交说明’
+   git log 
+   git reflog 
+   git reflong
+   git status
+   rm filename
+   git rm filename
+   git reset --hard commitid
+   git checkout --filename
+   
+
+   git clone .....
+   git push origin master
+   git pull
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
